@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{{titre}}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    {{#each styles}}
+        <link rel="stylesheet" href="{{this}}">
+    {{/each}}
+
+    <script type="module" src="/js/accept-cookies.js"></script>
+
+    {{#each scripts}}
+        <script type="module" src="{{this}}"></script>
+    {{/each}}
+</head>
+<body>
+    {{>header}}
+
+    <main>
+<!--
+        <div>
+            Nombre de visite: {{count}}
+        </div>
+-->
+        {{#if user}}
+        <div id="user">
+            Utilisateur: {{user.prenom}}
+        </div>
+        {{/if}}
+        
+        {{#unless acceptCookie}}
+            <div id="message-cookie">
+                <p>
+                    Ce site web et nos partenaires utilisent des cookies pour vous proposer de la publicité personnalisée, de la publicité géolocalisée, ainsi que pour vous permettre de partager du contenu sur les réseaux sociaux. Si vous naviguez sur ce site web, vous acceptez que nous utilisons des cookies.
+                </p>              
+                <input type="button" value="Accepter" id="button-accept">
+            </div>
+        {{/unless}}
+
+        {{{body}}}
+
+    </main>
+
+    {{>footer}}
+</body>
+</html>

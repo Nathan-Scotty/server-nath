@@ -1,0 +1,59 @@
+<!-- Header du site web avec le menu de navigation -->
+<div class="contact">
+    <label>+123456789
+        <img src="/img/phone.svg" alt="phone">
+    </label>
+
+    <div>
+        <a href="">
+            <img src="/img/facebook.svg" alt="facebook">
+        </a>
+        <a href="">
+            <img src="/img/instagram.svg" alt="instagram">
+        </a>
+        <a href="">
+            <img src="/img/linkedin.svg" alt="linkedin">
+        </a>
+    </div>
+</div>
+<header>
+    <div class="wrapper">
+        <div class="logo">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+        <h1>GymFit <span>Nathan Musoko</span></h1>
+        <div class="logo">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+        </div>
+        <nav>
+            <ul>
+                {{#unless isAdmin}}
+                {{#if user}}
+                <li><a href="/">Cours</a></li>
+                <li><a href="/compte">Compte</a></li>
+                {{/if}}
+                {{/unless}}
+                {{#if isAdmin}}
+                <li><a href="/admin">Admin</a></li>
+                <li><a href="/userinscrit">Utilisateur</a></li>
+                {{/if}}
+                {{#unless user}}
+                <li><a href="/acceuil">Acceuil</a></li>
+                <li><a href="/inscriptionuser">Inscription</a></li>
+                <li class="connexion"><a href="/connexion">Connexion</a></li>
+                {{/unless}}
+                {{#if user}}
+                <li>
+                    <form action="/deconnexion" method="post">
+                        <input type="submit" value="Déconnexion">
+                    </form>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+</header>
