@@ -32,6 +32,7 @@ const MemoryStore = memorystore(session);
 
 // Création du serveur
 let app = express();
+app.enable('trust proxy');
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 app.set('views', './views');
