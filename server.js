@@ -17,7 +17,6 @@ import { addCours, addInscription, getCours, getCoursAvecInscription, getCoursPa
 import { isDateValide, isIDValide, isQuantiteValide, isTexteValide, isCourrielValide, isNomValide, isPrenomValide, isPasswordValide } from './validation.js';
 import { addUtilisateur, deleteUser, getUserInscrit } from './model/utilisateur.js';
 import './authentification.js';
-import { log } from 'console';
 
 // Initialisation de handlebars
 const handlebars = create({
