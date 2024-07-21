@@ -31,6 +31,9 @@
     "sqlite": "^4.1.2",
     "sqlite3": "^5.1.2"
   },
+  "engines": {
+    "node": "v21.2.0"
+  },
   "devDependencies": {
     "nodemon": "^3.1.4"
   }
