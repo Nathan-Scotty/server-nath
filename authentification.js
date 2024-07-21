@@ -1,4 +1,4 @@
-import { compare } from "bcrypt";
+import { compare } from "bcryptjs";
 import passport from "passport";
 import { Strategy } from "passport-local";
 import { getUtilisateurByCourriel } from "./model/utilisateur.js";
